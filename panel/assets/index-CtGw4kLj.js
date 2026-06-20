@@ -1,0 +1,1 @@
+import{c as r,G as e,A as s,d as n}from"./index-DHktzyuY.js";import{j as o}from"./vendor-i18n-C8_DMp4y.js";import{r as a,H as i}from"./vendor-react-B4KGYa0Y.js";const t=document.getElementById("root");if(!t)throw new Error("Root element #root not found");r.createRoot(t).render(o.jsx(a.StrictMode,{children:o.jsxs(i,{children:[o.jsx(e,{}),o.jsx(s,{})]})}));n();
