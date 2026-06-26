@@ -1,11 +1,11 @@
 FROM alpine:3.22.0
 
-RUN apk add --no-cache tzdata ca-certificates
+RUN apk add --no-cache tzdata
 
-RUN mkdir -p /CLIProxyAPI/panel
+RUN mkdir -p /CLIProxyAPI/static /CLIProxyAPI/data
 
 COPY ./CLIProxyAPI /CLIProxyAPI/CLIProxyAPI
-COPY ./panel/ /CLIProxyAPI/panel/
+COPY ./static/management.html /CLIProxyAPI/static/management.html
 
 COPY ./config.yaml /CLIProxyAPI/config.yaml
 
@@ -13,8 +13,7 @@ WORKDIR /CLIProxyAPI
 
 EXPOSE 8317
 
-ENV TZ=Asia/Shanghai \
-    MANAGEMENT_PANEL_DIR=/CLIProxyAPI/panel \
-    CLIRELAY_LOCALE=zh
+ENV TZ=Asia/Shanghai
+ENV MANAGEMENT_STATIC_PATH=/CLIProxyAPI/static/management.html
 
 CMD ["./CLIProxyAPI"]
